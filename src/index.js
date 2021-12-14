@@ -90,7 +90,7 @@ app.post("/upload", async (req, res) => {
       img,
       duration,
       title,
-      details: `${allGenres[0]} • ${language} • ${releaseDate}`,
+      details: `${allGenres[0]} • ${language} • ${year}`,
       releaseDate,
       uploadedDate: playerData.uploadedDate,
       genres: allGenres,
