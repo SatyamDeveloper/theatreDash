@@ -21,7 +21,7 @@ app.use(function (req, res, next) {
 });
 
 app.get("/", async (req, res) => {
-  const currWebsite = await Video.find();
+  const currWebsite = await Video.find().sort({releaseDate:-1});
   res.json(currWebsite);
 });
 
