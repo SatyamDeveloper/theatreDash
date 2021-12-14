@@ -9,7 +9,6 @@ const Genres = require("./models/genres");
 const Hints = require("./models/hints");
 
 app.use(express.json());
-app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 
 app.use(function (req, res, next) {
@@ -34,16 +33,6 @@ app.get('/player/:id',async (req,res)=>{
 app.get('/player/video/:id',async(req,res)=>{
     const data = await Video.find()// exclud req.params.id || data that excludes the id
     res.json(data)
-})
-
-app.get("/movie", async (req, res) => {
-  res.render("index", { page: "movie" });
-});
-app.get("/webseries", async (req, res) => {
-  res.render("index", { page: "webseries" });
-});
-app.get('/webseries/:id', async(req,res)=>{
-    res.render('player', {videoId:req.params.id})
 })
 
 app.post('/upload/:id',async(req,res)=>{
